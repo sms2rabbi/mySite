@@ -74,6 +74,36 @@
       font-weight: bold;
       z-index: 9999;
     }
+
+
+/* Tawk.to চ্যাট আইকন কাস্টমাইজ */
+iframe[title="chat widget"] {
+  opacity: 0 !important; /* আইকন লুকায় ফেলি */
+  pointer-events: none;  /* ক্লিক ব্লক করি */
+}
+
+/* নিজস্ব কাস্টম বাটন তৈরি */
+.custom-chat-button {
+  position: fixed;
+  bottom: 80px; /* এখানেই চাইছো */
+  right: 20px;
+  background-color: #00a859;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+  z-index: 9999;
+  cursor: pointer;
+  line-height: 1.2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.custom-chat-button:hover {
+  background-color: #00914f;
+}
+    
   </style>
 </head>
 <body>
@@ -186,6 +216,11 @@ Tawk_API.onLoad = function () {
 <footer>
   <p>&copy; ২০২৫ Rabbi | ওয়েবসাইট তৈরি: আপনার বিশ্বাসই আমার শক্তি।</p>
 </footer>
+
+
+<div class="custom-chat-button" onclick="Tawk_API.maximize()">
+  Live<br>Chat
+</div>
 
 </body>
 </html>
