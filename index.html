@@ -164,14 +164,19 @@
 <script type="text/javascript">
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 
-// ⬇️ ১৫px উপরে তোলার জন্য নিচের অংশ যুক্ত
-Tawk_API.onLoad = function () {
-  const chatIframe = document.querySelector("iframe[title='chat widget']");
-  if (chatIframe) {
-    // ডিফল্ট পজিশন থেকে ১৫px উপরে তুলবো
-    const currentBottom = window.getComputedStyle(chatIframe).bottom;
-    const numericBottom = parseInt(currentBottom) || 0;
-    chatIframe.style.bottom = (numericBottom + 15) + "px";
+// ⬇️ 50px উপরে রাখার জন্য Custom CSS override
+Tawk_API.customStyle = {
+  visibility: {
+    desktop: {
+      position: 'fixed',
+      bottom: '70px', // Default প্রায় 20px → 20 + 50 = 70px
+      right: '20px'
+    },
+    mobile: {
+      position: 'fixed',
+      bottom: '70px',
+      right: '20px'
+    }
   }
 };
 
