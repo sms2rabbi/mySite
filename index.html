@@ -123,12 +123,12 @@
     }
   
   
-  iframe[title="chat widget"] {
-  bottom: 100px !important;
-  right: 30px !important;
-  transform: scale(0.9);
-}
-  
+  /* এখানে কিছুই হাইড করছিনা, শুধু override হবে */
+  .tawk-floating-icon {
+    bottom: 120px !important;
+    right: 20px !important;
+    transition: all 0.3s ease;
+  }
   
   
   </style>
@@ -234,11 +234,24 @@
   (function () {
     var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
     s1.async = true;
-    s1.src = 'https://embed.tawk.to/YOUR_TAWKTO_ID/DEFAULT';
+    s1.src = 'https://embed.tawk.to/YOUR_ID/DEFAULT';
     s1.charset = 'UTF-8';
     s1.setAttribute('crossorigin', '*');
     s0.parentNode.insertBefore(s1, s0);
   })();
+
+  // আইকন রেন্ডার হলে তারপর সেটার অবস্থান বদলাও
+  Tawk_API.onLoad = function () {
+    const interval = setInterval(() => {
+      const iframe = document.querySelector('iframe[title="chat widget"]');
+      if (iframe) {
+        iframe.style.bottom = '120px';
+        iframe.style.right = '20px';
+        iframe.style.transition = 'all 0.3s ease';
+        clearInterval(interval);
+      }
+    }, 300);
+  };
 </script>
   <!--End of Tawk.to Script-->
 
