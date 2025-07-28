@@ -94,7 +94,7 @@
       background-color: #1ebe5b;
     }
 
-    /* Tawk.to iframe এর সাইজ ও পজিশন */
+    /* Tawk.to iframe: ছোট, গোলাকার, নিচে ডান পাশে */
     iframe[title='chat widget'] {
       position: fixed !important;
       bottom: 20px !important;
@@ -104,13 +104,16 @@
       border-radius: 50% !important;
       overflow: hidden !important;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-      z-index: 9998 !important;
+      z-index: 9998 !important;  /* কাস্টম বাটনের নিচে */
+      opacity: 1 !important;  /* দৃশ্যমান থাকবে */
+      visibility: visible !important;
+      pointer-events: auto !important;
     }
 
-    /* নিজের তৈরি Live Chat বাটন উপরে (Tawk.to iframe এর উপরে) */
+    /* কাস্টম Live Chat বাটন (Tawk.to iframe এর উপরে) */
     .custom-chat-button {
       position: fixed;
-      bottom: 90px; /* iframe এর উপরে 70px উপরে রাখা হয়েছে */
+      bottom: 90px; /* উইজেটের উপরে */
       right: 20px;
       width: 60px;
       height: 60px;
@@ -126,9 +129,10 @@
       text-align: center;
       line-height: 1.2;
       cursor: pointer;
-      z-index: 9999; /* iframe এর উপরে আসবে */
+      z-index: 9999; /* উইজেটের উপরে */
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       user-select: none;
+      transition: background-color 0.3s ease;
     }
     .custom-chat-button:hover {
       background-color: #00914f;
@@ -250,6 +254,9 @@
         );
         chatIframe.style.setProperty("overflow", "hidden", "important");
         chatIframe.style.setProperty("z-index", "9998", "important");
+        chatIframe.style.setProperty("opacity", "1", "important");
+        chatIframe.style.setProperty("visibility", "visible", "important");
+        chatIframe.style.setProperty("pointer-events", "auto", "important");
       }
     };
 
