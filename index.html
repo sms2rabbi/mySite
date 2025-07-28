@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rabbi - ওয়েবসাইট ডেভেলপার Portfolio">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Rabbi - ওয়েবসাইট ডেভেলপার Portfolio" />
   <title>Rabbi - ওয়েব ডেভেলপার</title>
-  <!-- ✅ Font Awesome for WhatsApp Icon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Font Awesome for WhatsApp Icon -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -41,7 +44,9 @@
     h2 {
       color: #004d40;
     }
-    .services, .pricing, .testimonials {
+    .services,
+    .pricing,
+    .testimonials {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
@@ -57,7 +62,8 @@
       color: white;
       padding: 10px;
     }
-    form input, form textarea {
+    form input,
+    form textarea {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
@@ -65,14 +71,14 @@
       border-radius: 5px;
     }
 
-    /* ✅ WhatsApp বাটন: আইকনসহ গোল */
+    /* WhatsApp বাটন: আইকনসহ গোল */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
       right: 20px;
       width: 60px;
       height: 60px;
-      background-color: #25D366;
+      background-color: #25d366;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -84,20 +90,27 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
       transition: background-color 0.3s ease;
     }
-
     .whatsapp-button:hover {
       background-color: #1ebe5b;
     }
 
-    /* 🔕 Tawk.to এর ডিফল্ট আইকন পুরোপুরি লুকিয়ে দাও */
-    iframe[title="chat widget"] {
-      display: none !important;
+    /* Tawk.to iframe এর সাইজ ও পজিশন */
+    iframe[title='chat widget'] {
+      position: fixed !important;
+      bottom: 20px !important;
+      right: 20px !important;
+      width: 60px !important;
+      height: 60px !important;
+      border-radius: 50% !important;
+      overflow: hidden !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+      z-index: 9998 !important;
     }
 
-    /* ✅ নিজের ডিজাইন করা গোলাকার Live Chat বাটন */
+    /* নিজের তৈরি Live Chat বাটন উপরে (Tawk.to iframe এর উপরে) */
     .custom-chat-button {
       position: fixed;
-      bottom: 100px;
+      bottom: 90px; /* iframe এর উপরে 70px উপরে রাখা হয়েছে */
       right: 20px;
       width: 60px;
       height: 60px;
@@ -113,133 +126,153 @@
       text-align: center;
       line-height: 1.2;
       cursor: pointer;
-      z-index: 9999;
+      z-index: 9999; /* iframe এর উপরে আসবে */
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      user-select: none;
     }
-
     .custom-chat-button:hover {
       background-color: #00914f;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Rabbi - ওয়েব ডেভেলপার</h1>
+    <p>HTML, CSS, JavaScript, WordPress এক্সপার্ট</p>
+  </header>
 
-<header>
-  <h1>Rabbi - ওয়েব ডেভেলপার</h1>
-  <p>HTML, CSS, JavaScript, WordPress এক্সপার্ট</p>
-</header>
+  <nav>
+    <a href="#home">হোম</a>
+    <a href="#services">সার্ভিস</a>
+    <a href="#pricing">দাম</a>
+    <a href="#contact">যোগাযোগ</a>
+  </nav>
 
-<nav>
-  <a href="#home">হোম</a>
-  <a href="#services">সার্ভিস</a>
-  <a href="#pricing">দাম</a>
-  <a href="#contact">যোগাযোগ</a>
-</nav>
+  <section id="home">
+    <h2>স্বাগতম!</h2>
+    <p>
+      আমি Rabbi, একজন অভিজ্ঞ ওয়েব ডেভেলপার। আমি HTML, CSS, JavaScript এবং
+      WordPress দিয়ে দারুণ ওয়েবসাইট বানাই। আপনার ব্যবসার জন্য একটি আধুনিক
+      ও দ্রুত লোডিং ওয়েবসাইট বানাতে চাইলে আমি আছি।
+    </p>
+  </section>
 
-<section id="home">
-  <h2>স্বাগতম!</h2>
-  <p>আমি Rabbi, একজন অভিজ্ঞ ওয়েব ডেভেলপার। আমি HTML, CSS, JavaScript এবং WordPress দিয়ে দারুণ ওয়েবসাইট বানাই। আপনার ব্যবসার জন্য একটি আধুনিক ও দ্রুত লোডিং ওয়েবসাইট বানাতে চাইলে আমি আছি।</p>
-</section>
+  <section id="services">
+    <h2>সার্ভিস সমূহ</h2>
+    <div class="services">
+      <div class="card">
+        <h3>HTML & CSS Website</h3>
+        <p>সুন্দর ডিজাইন ও রেস্পনসিভ ওয়েবসাইট।</p>
+      </div>
+      <div class="card">
+        <h3>WordPress Site</h3>
+        <p>দ্রুত সেটআপ এবং প্রফেশনাল ডিজাইন সহ।</p>
+      </div>
+      <div class="card">
+        <h3>Speed Optimization</h3>
+        <p>ওয়েবসাইট লোডিং টাইম কমানো এবং গুগল র‍্যাংক উন্নত করা।</p>
+      </div>
+      <div class="card">
+        <h3>Custom Design</h3>
+        <p>আপনার প্রয়োজন অনুযায়ী একদম ইউনিক ডিজাইন।</p>
+      </div>
+    </div>
+  </section>
 
-<section id="services">
-  <h2>সার্ভিস সমূহ</h2>
-  <div class="services">
-    <div class="card">
-      <h3>HTML & CSS Website</h3>
-      <p>সুন্দর ডিজাইন ও রেস্পনসিভ ওয়েবসাইট।</p>
+  <section id="pricing">
+    <h2>দাম তালিকা</h2>
+    <div class="pricing">
+      <div class="card">
+        <h3>সাধারণ ওয়েবসাইট</h3>
+        <p>৳২০০০ / $20</p>
+      </div>
+      <div class="card">
+        <h3>WordPress Site</h3>
+        <p>৳৪০০০ / $40</p>
+      </div>
+      <div class="card">
+        <h3>Speed Optimization</h3>
+        <p>৳১৫০০ / $15</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>WordPress Site</h3>
-      <p>দ্রুত সেটআপ এবং প্রফেশনাল ডিজাইন সহ।</p>
+  </section>
+
+  <section id="testimonials">
+    <h2>ক্লায়েন্ট রিভিউ</h2>
+    <div class="testimonials">
+      <div class="card">
+        <p>“Rabbi খুব সুন্দর ডিজাইন করে। আমার ওয়েবসাইট একদম পারফেক্ট।” — মাহির</p>
+      </div>
+      <div class="card">
+        <p>“WordPress এর কাজ অসাধারণ, পরবর্তী কাজও উনাকে দিব।” — জান্নাত</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Speed Optimization</h3>
-      <p>ওয়েবসাইট লোডিং টাইম কমানো এবং গুগল র‍্যাংক উন্নত করা।</p>
-    </div>
-    <div class="card">
-      <h3>Custom Design</h3>
-      <p>আপনার প্রয়োজন অনুযায়ী একদম ইউনিক ডিজাইন।</p>
-    </div>
+  </section>
+
+  <section id="contact">
+    <h2>📞 যোগাযোগ করুন</h2>
+    <form action="#" method="post">
+      <input type="text" placeholder="আপনার নাম" required />
+      <input type="email" placeholder="ইমেইল ঠিকানা" required />
+      <textarea rows="4" placeholder="আপনার বার্তা" required></textarea>
+      <input type="submit" value="পাঠান" />
+    </form>
+  </section>
+
+  <!-- WhatsApp আইকন বাটন -->
+  <a
+    href="https://wa.me/88017XXXXXXXX"
+    class="whatsapp-button"
+    target="_blank"
+    aria-label="WhatsApp"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Tawk.to লাইভ চ্যাট যুক্ত -->
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+      Tawk_LoadStart = new Date();
+
+    Tawk_API.onLoad = function () {
+      const chatIframe = document.querySelector("iframe[title='chat widget']");
+      if (chatIframe) {
+        chatIframe.style.setProperty("bottom", "20px", "important");
+        chatIframe.style.setProperty("right", "20px", "important");
+        chatIframe.style.setProperty("width", "60px", "important");
+        chatIframe.style.setProperty("height", "60px", "important");
+        chatIframe.style.setProperty("border-radius", "50%", "important");
+        chatIframe.style.setProperty(
+          "box-shadow",
+          "0 2px 8px rgba(0, 0, 0, 0.3)",
+          "important"
+        );
+        chatIframe.style.setProperty("overflow", "hidden", "important");
+        chatIframe.style.setProperty("z-index", "9998", "important");
+      }
+    };
+
+    (function () {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = "https://embed.tawk.to/6887a710f072f7192b20de03/default"; // তোমার widget ID
+      s1.charset = "UTF-8";
+      s1.setAttribute("crossorigin", "*");
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+  <footer>
+    <p>© ২০২৫ Rabbi | ওয়েবসাইট তৈরি: আপনার বিশ্বাসই আমার শক্তি।</p>
+  </footer>
+
+  <!-- নিজের তৈরি Live Chat বাটন -->
+  <div class="custom-chat-button" onclick="Tawk_API.maximize()">
+    Live<br />
+    Chat
   </div>
-</section>
-
-<section id="pricing">
-  <h2>দাম তালিকা</h2>
-  <div class="pricing">
-    <div class="card">
-      <h3>সাধারণ ওয়েবসাইট</h3>
-      <p>৳২০০০ / $20</p>
-    </div>
-    <div class="card">
-      <h3>WordPress Site</h3>
-      <p>৳৪০০০ / $40</p>
-    </div>
-    <div class="card">
-      <h3>Speed Optimization</h3>
-      <p>৳১৫০০ / $15</p>
-    </div>
-  </div>
-</section>
-
-<section id="testimonials">
-  <h2>ক্লায়েন্ট রিভিউ</h2>
-  <div class="testimonials">
-    <div class="card">
-      <p>“Rabbi খুব সুন্দর ডিজাইন করে। আমার ওয়েবসাইট একদম পারফেক্ট।” — মাহির</p>
-    </div>
-    <div class="card">
-      <p>“WordPress এর কাজ অসাধারণ, পরবর্তী কাজও উনাকে দিব।” — জান্নাত</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>📞 যোগাযোগ করুন</h2>
-  <form action="#" method="post">
-    <input type="text" placeholder="আপনার নাম" required>
-    <input type="email" placeholder="ইমেইল ঠিকানা" required>
-    <textarea rows="4" placeholder="আপনার বার্তা" required></textarea>
-    <input type="submit" value="পাঠান">
-  </form>
-</section>
-
-<!-- ✅ WhatsApp আইকন বাটন -->
-<a href="https://wa.me/88017XXXXXXXX" class="whatsapp-button" target="_blank" aria-label="WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- 🔴 লাইভ চ্যাট যুক্ত (Tawk.to Widget) -->
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-
-Tawk_API.onLoad = function () {
-  const chatIframe = document.querySelector("iframe[title='chat widget']");
-  if (chatIframe) {
-    // যদিও আইকন হাইড করা, তবুও চাইলে পজিশন ঠিক রাখতে পারো
-    chatIframe.style.setProperty("bottom", "100px", "important");
-  }
-};
-
-(function(){
-  var s1 = document.createElement("script"),
-      s0 = document.getElementsByTagName("script")[0];
-  s1.async = true;
-  s1.src = 'https://embed.tawk.to/6887a710f072f7192b20de03/default'; // 🔁 তোমার widget ID
-  s1.charset = 'UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1, s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
-<footer>
-  <p>&copy; ২০২৫ Rabbi | ওয়েবসাইট তৈরি: আপনার বিশ্বাসই আমার শক্তি।</p>
-</footer>
-
-<!-- ✅ নিজের তৈরি Live Chat বাটন -->
-<div class="custom-chat-button" onclick="Tawk_API.maximize()">
-  Live<br>Chat
-</div>
 </body>
 </html>
