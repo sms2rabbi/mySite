@@ -162,32 +162,27 @@
 <!-- 🔴 লাইভ চ্যাট যুক্ত (Tawk.to Widget) -->
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 
-  // ৫০px উপরে দেখাতে customStyle ব্যবহার
-  Tawk_API.customStyle = {
-    visibility: {
-      desktop: {
-        position: 'fixed',
-        bottom: '70px', // WhatsApp এর 20px + 50px = 70px
-        right: '20px'
-      },
-      mobile: {
-        position: 'fixed',
-        bottom: '70px',
-        right: '20px'
-      }
-    }
-  };
+// ⬇️ ১৫px উপরে তোলার জন্য নিচের অংশ যুক্ত
+Tawk_API.onLoad = function () {
+  const chatIframe = document.querySelector("iframe[title='chat widget']");
+  if (chatIframe) {
+    // ডিফল্ট পজিশন থেকে ১৫px উপরে তুলবো
+    const currentBottom = window.getComputedStyle(chatIframe).bottom;
+    const numericBottom = parseInt(currentBottom) || 0;
+    chatIframe.style.bottom = (numericBottom + 50) + "px";
+  }
+};
 
-  (function(){
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/6887a710f072f7192b20de03/default'; // 🔁 তোমার Widget ID
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-  })();
+(function(){
+  var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/6887a710f072f7192b20de03/default'; // 🔁 এখানে চাইলে তোমার widget ID বসাও
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
 </script>
 <!--End of Tawk.to Script-->
 
