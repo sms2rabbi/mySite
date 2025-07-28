@@ -219,9 +219,37 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  
+  <!-- Tawk.to লাইভ চ্যাট যুক্ত -->
  <!--Start of Tawk.to Script-->
-<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+
+  (function () {
+    var s1 = document.createElement("script"),
+      s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/6887a710f072f7192b20de03/default';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  })();
+
+  Tawk_API.onLoad = function () {
+    const observer = new MutationObserver(() => {
+      const chatIframe = document.querySelector('iframe[title="chat widget"]');
+      if (chatIframe) {
+        chatIframe.style.bottom = '20px'; // ঠিক নিচে রাখলাম 90px (custom btn) - 60px (chat height) = 30px থেকে একটু overlap
+        chatIframe.style.right = '20px'; // Custom btn এর সাথে মিলিয়ে
+        chatIframe.style.zIndex = '9998'; // Custom বাটনের নিচে থাকবে
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  };
+</script>
+<!--End of Tawk.to Script-->
+ 
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -234,10 +262,7 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-
-<!--End of Tawk.to Script-->
-
-
+  
   <footer>
     <p>© ২০২৫ Rabbi | ওয়েবসাইট তৈরি: আপনার বিশ্বাসই আমার শক্তি।</p>
   </footer>
