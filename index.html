@@ -94,22 +94,6 @@
       background-color: #1ebe5b;
     }
 
-    /* Tawk.to iframe: ছোট, গোলাকার, নিচে ডান পাশে */
-    iframe[title='chat widget'] {
-      position: fixed !important;
-      bottom: 20px !important;
-      right: 20px !important;
-      width: 60px !important;
-      height: 60px !important;
-      border-radius: 50% !important;
-      overflow: hidden !important;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-      z-index: 9998 !important;  /* কাস্টম বাটনের নিচে */
-      opacity: 1 !important;  /* দৃশ্যমান থাকবে */
-      visibility: visible !important;
-      pointer-events: auto !important;
-    }
-
     /* কাস্টম Live Chat বাটন (Tawk.to iframe এর উপরে) */
     .custom-chat-button {
       position: fixed;
@@ -236,39 +220,15 @@
   <!-- Tawk.to লাইভ চ্যাট যুক্ত -->
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
-    var Tawk_API = Tawk_API || {},
-      Tawk_LoadStart = new Date();
-
-    Tawk_API.onLoad = function () {
-      const chatIframe = document.querySelector("iframe[title='chat widget']");
-      if (chatIframe) {
-        chatIframe.style.setProperty("bottom", "20px", "important");
-        chatIframe.style.setProperty("right", "20px", "important");
-        chatIframe.style.setProperty("width", "60px", "important");
-        chatIframe.style.setProperty("height", "60px", "important");
-        chatIframe.style.setProperty("border-radius", "50%", "important");
-        chatIframe.style.setProperty(
-          "box-shadow",
-          "0 2px 8px rgba(0, 0, 0, 0.3)",
-          "important"
-        );
-        chatIframe.style.setProperty("overflow", "hidden", "important");
-        chatIframe.style.setProperty("z-index", "9998", "important");
-        chatIframe.style.setProperty("opacity", "1", "important");
-        chatIframe.style.setProperty("visibility", "visible", "important");
-        chatIframe.style.setProperty("pointer-events", "auto", "important");
-      }
-    };
-
-    (function () {
-      var s1 = document.createElement("script"),
-        s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = "https://embed.tawk.to/6887a710f072f7192b20de03/default"; // তোমার widget ID
-      s1.charset = "UTF-8";
-      s1.setAttribute("crossorigin", "*");
-      s0.parentNode.insertBefore(s1, s0);
-    })();
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6887a710f072f7192b20de03/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  })();
   </script>
   <!--End of Tawk.to Script-->
 
