@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rabbi - ওয়েবসাইট ডেভেলপার Portfolio">
   <title>Rabbi - ওয়েব ডেভেলপার</title>
+  <!-- ✅ Font Awesome for WhatsApp Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -62,48 +64,62 @@
       border: 1px solid #ccc;
       border-radius: 5px;
     }
+
+    /* ✅ WhatsApp বাটন: আইকনসহ গোল */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
       right: 20px;
+      width: 60px;
+      height: 60px;
       background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
-      padding: 10px 15px;
-      border-radius: 50px;
+      font-size: 28px;
       text-decoration: none;
-      font-weight: bold;
       z-index: 9999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease;
     }
 
+    .whatsapp-button:hover {
+      background-color: #1ebe5b;
+    }
 
-/* Tawk.to চ্যাট আইকন কাস্টমাইজ */
-iframe[title="chat widget"] {
-  opacity: 0 !important; /* আইকন লুকায় ফেলি */
-  pointer-events: none;  /* ক্লিক ব্লক করি */
-}
+    /* 🔕 Tawk.to এর ডিফল্ট আইকন পুরোপুরি লুকিয়ে দাও */
+    iframe[title="chat widget"] {
+      display: none !important;
+    }
 
-/* নিজস্ব কাস্টম বাটন তৈরি */
-.custom-chat-button {
-  position: fixed;
-  bottom: 80px; /* এখানেই চাইছো */
-  right: 20px;
-  background-color: #00a859;
-  color: white;
-  padding: 8px 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-family: sans-serif;
-  text-align: center;
-  z-index: 9999;
-  cursor: pointer;
-  line-height: 1.2;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
+    /* ✅ নিজের ডিজাইন করা গোলাকার Live Chat বাটন */
+    .custom-chat-button {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #00a859;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      font-family: sans-serif;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.2;
+      cursor: pointer;
+      z-index: 9999;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
 
-.custom-chat-button:hover {
-  background-color: #00914f;
-}
-    
+    .custom-chat-button:hover {
+      background-color: #00914f;
+    }
   </style>
 </head>
 <body>
@@ -187,7 +203,10 @@ iframe[title="chat widget"] {
   </form>
 </section>
 
-<a href="https://wa.me/88017XXXXXXXX" class="whatsapp-button" target="_blank">WhatsApp</a>
+<!-- ✅ WhatsApp আইকন বাটন -->
+<a href="https://wa.me/88017XXXXXXXX" class="whatsapp-button" target="_blank" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <!-- 🔴 লাইভ চ্যাট যুক্ত (Tawk.to Widget) -->
 <!--Start of Tawk.to Script-->
@@ -197,15 +216,16 @@ var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
 Tawk_API.onLoad = function () {
   const chatIframe = document.querySelector("iframe[title='chat widget']");
   if (chatIframe) {
-    // সরাসরি ৮০px এ ফিক্সড করে দিচ্ছি
-    chatIframe.style.setProperty("bottom", "80px", "important");
+    // যদিও আইকন হাইড করা, তবুও চাইলে পজিশন ঠিক রাখতে পারো
+    chatIframe.style.setProperty("bottom", "100px", "important");
   }
 };
 
 (function(){
-  var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+  var s1 = document.createElement("script"),
+      s0 = document.getElementsByTagName("script")[0];
   s1.async = true;
-  s1.src = 'https://embed.tawk.to/6887a710f072f7192b20de03/default'; // ✅ এখানে তোমার widget ID সঠিক
+  s1.src = 'https://embed.tawk.to/6887a710f072f7192b20de03/default'; // 🔁 তোমার widget ID
   s1.charset = 'UTF-8';
   s1.setAttribute('crossorigin','*');
   s0.parentNode.insertBefore(s1, s0);
@@ -217,10 +237,9 @@ Tawk_API.onLoad = function () {
   <p>&copy; ২০২৫ Rabbi | ওয়েবসাইট তৈরি: আপনার বিশ্বাসই আমার শক্তি।</p>
 </footer>
 
-
+<!-- ✅ নিজের তৈরি Live Chat বাটন -->
 <div class="custom-chat-button" onclick="Tawk_API.maximize()">
   Live<br>Chat
 </div>
-
 </body>
 </html>
